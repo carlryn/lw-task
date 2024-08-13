@@ -1,0 +1,11 @@
+**.env
+.ipynb_checkpoints
+.ruff_cache
+.python-version
+__pycache__
+
+
+
+# Personal
+commands.txt
+**.ipynb

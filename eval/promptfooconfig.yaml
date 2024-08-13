@@ -1,0 +1,53 @@
+# Learn more about building a configuration: https://promptfoo.dev/docs/configuration/guide
+description: "My eval"
+
+prompts:
+  - file://eval_prompt.txt
+
+
+providers:
+  - "openai:gpt-4o-mini"
+  - "openai:gpt-4o"
+  - "openai:gpt-3.5-turbo"
+
+
+defaultTest:
+  assert:
+    # Verify that the output doesn't contain "AI language model"
+    - type: not-contains
+      value: AI language model
+
+    - type: llm-rubric
+      value: Should mention all five products from the text.
+
+    - type: latency
+      threshold: 7000
+
+    - type: llm-rubric
+      value: Is using the input text to generate the new text.
+
+    - type: select-best
+      value: Select the best output based on the input text.
+
+    - type: llm-rubric
+      value: Is the text generated written in a way that it targets "People who likes to be outdoors"?
+
+    - type: perplexity
+      threshold: 1.5
+
+    - type: python
+      value: |
+        diff = abs(1000 - len(output.split(" ")))
+        if diff < 200:
+          return {
+            'pass': True,
+            'score': diff,
+            'reason': 'The output length is between 800 to 1200 words.'
+          }
+        else:
+          return {
+            'pass': False,
+            'score': diff,
+            'reason': 'The output length is not between 800 to 1200 words.'
+          }
+

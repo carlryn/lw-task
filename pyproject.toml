@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "lw-task"
+version = "0.1.0"
+description = ""
+authors = ["Carl Rynegardh <carl.rynegardh@issuu.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4.0"
+fastapi = { extras = ["standard"], version = "^0.112.0" }
+langchain = "^0.2.4"
+langchain-openai = "^0.1.20"
+boto3 = "^1.34.155"
+modal = "^0.64.17"
+
+
+[tool.poetry.group.dev.dependencies]
+jupyter = "^1.0.0"
+black = "^24.8.0"
+ruff = "^0.5.7"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 100
