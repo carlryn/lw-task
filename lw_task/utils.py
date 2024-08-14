@@ -4,7 +4,7 @@ from botocore.exceptions import ClientError
 
 def get_secret():
     secret_name = "openai_api_key"
-    region_name = "us-east-1"
+    region_name = "us-east-1" # Todo: Should not be hardcoded.
 
     # Create a Secrets Manager client
     session = boto3.session.Session()

@@ -13,7 +13,7 @@ openai_api_key = utils.get_secret()
 os.environ["OPENAI_API_KEY"] = openai_api_key
 table_name = "CustomerInformation"
 
-dynamodb_resource = boto3.resource("dynamodb", region_name="us-east-1")
+dynamodb_resource = boto3.resource("dynamodb", region_name="us-east-1") # Todo: Should not be hardcoded. Data locality.
 
 
 class GenAIRequest(BaseModel):
