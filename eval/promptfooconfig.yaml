@@ -30,7 +30,7 @@ defaultTest:
       value: Select the best output based on the input text.
 
     - type: llm-rubric
-      value: Is the text generated written in a way that it targets "People who likes to be outdoors"?
+      value: Does it take the seed_sentence parameter into account?
 
     - type: perplexity
       threshold: 1.5
