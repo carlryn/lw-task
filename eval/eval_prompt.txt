@@ -205,7 +205,7 @@ These products reflect Shoby’s commitment to luxury, innovation, and practical
 
 
 These are the input parameters:
-* number_of_words: 1000
+* number_of_words: 500
 * target_audience: People who likes to be outdoors
 * tone_of_voice: Educational
 * domain: advertising
